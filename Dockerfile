@@ -17,13 +17,13 @@ RUN apt-get update -y && \
     apt-get upgrade -y && \
     # please keep Java version in sync with JDK capabilities below
     apt-get install -y openjdk-8-jdk && \
-    apt-get install -y wget
+    apt-get install -y curl
 
 
 RUN addgroup ${BAMBOO_GROUP} && \
      adduser --home ${BAMBOO_USER_HOME} --ingroup ${BAMBOO_GROUP} --disabled-password ${BAMBOO_USER}
 
-RUN wget --no-check-certificate -O ${AGENT_JAR} ${DOWNLOAD_URL}
+RUN curl -L --output ${AGENT_JAR} ${DOWNLOAD_URL}
 COPY bamboo-update-capability.sh  ${BAMBOO_USER_HOME}/bamboo-update-capability.sh 
 COPY runAgent.sh ${SCRIPT_WRAPPER} 
 
