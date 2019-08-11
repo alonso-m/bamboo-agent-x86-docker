@@ -12,4 +12,8 @@ if [ -z ${SECURITY_TOKEN+x} ]; then
 else 
     BAMBOO_SECURITY_TOKEN_PARAM="-t ${SECURITY_TOKEN}"
 fi 
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+export LANGUAGE=C.UTF-8
+
 java ${VM_OPTS} -jar ${AGENT_JAR} ${1}/agentServer/ ${BAMBOO_SECURITY_TOKEN_PARAM}
