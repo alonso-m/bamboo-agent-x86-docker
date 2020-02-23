@@ -1,5 +1,7 @@
 #!/bin/sh
 # COPY FROM https://bitbucket.org/atlassian/bamboo-update-capability/raw/master/bamboo-update-capability.sh
+set -eu
+
 displayUsage() { 
 	echo "\nScript to upgrade bamboo agent capabilities directly in properties file"
 	echo "Will remove from file old property with given name and write a new one"
@@ -14,7 +16,7 @@ if [  $# -le 1 ]; then
 	exit 1
 fi 
 
-if [ -z "$3" ]; then
+if [ $# -le 2 ]; then
 	propertiesFilePath=~/init-bamboo-capabilities.properties
 else
 	propertiesFilePath=$3
