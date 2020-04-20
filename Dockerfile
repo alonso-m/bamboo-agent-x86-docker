@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER Bamboo/Atlassian
 
-ENV BAMBOO_VERSION=6.10.5
+ENV BAMBOO_VERSION=6.10.6
 
 ENV DOWNLOAD_URL=https://packages.atlassian.com/maven-closedsource-local/com/atlassian/bamboo/atlassian-bamboo-agent-installer/${BAMBOO_VERSION}/atlassian-bamboo-agent-installer-${BAMBOO_VERSION}.jar
 ENV BAMBOO_USER=bamboo
