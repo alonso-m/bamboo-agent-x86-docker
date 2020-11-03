@@ -20,9 +20,9 @@ Make sure your Bamboo server is running and has remote agents support enabled. T
 1. Go to **Administration > Agents**.
 2. Start the Bamboo Agent container:
 
-        docker run -v bambooAgentVolume:/home/bamboo/bamboo-agent-home --name="bambooAgent" --init -d atlassian/bamboo-agent-base BAMBOO_SERVER_URL
+        docker run -v bambooAgentVolume:/home/bamboo/bamboo-agent-home --name="bambooAgent" -d atlassian/bamboo-agent-base BAMBOO_SERVER_URL
 
-    where `BAMBOO_SERVER_URL` is the base URL of your Bamboo server. **Note that the `--init` flag is required to properly reap zombie processes.**
+    where `BAMBOO_SERVER_URL` is the base URL of your Bamboo server.
 
 3. Verify if your remote agent has registered itself. Go back to the **Administration > Agents**.
 
@@ -69,3 +69,8 @@ For product support, go to [support.atlassian.com](https://support.atlassian.com
 
 * Base image changed to `adoptopenjdk:8-jdk-hotspot-bionic`
 * Improved image's layering
+
+## 7.1.4
+
+* Added `tini` to act as the default PID 1 init process
+* Base image changed to `adoptopenjdk:8-jdk-hotspot-focal`
