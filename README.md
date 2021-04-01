@@ -32,14 +32,13 @@ If you have security token verification enabled on your server, you can pass the
 
 ## JVM Configuration
 
-If you need to pass additional JVM arguments, use the `VM_OPTS` environment variable.
+You can pass additional JVM arguments by using the `VM_OPTS` environment variable.
 
-This way you can customize Bamboo agent's memory usage by overriding wrapper's default configuration.
-For example, if you want to change the initial amount of memory to 512MB and maximum amount of memory to 2048MB, add the following to your docker run command:
+This way you can customize the Bamboo agent’s memory usage by overriding the wrapper’s default configuration. For example, to change the initial memory to 512MB and the maximum memory to 2048MB, add the following properties to your docker run command:
 
-`-e VM_OPTS=VM_OPTS="-Dwrapper.java.initmemory=512 -Dwrapper.java.maxmemory=2048"`
+`-e VM_OPTS="-Dwrapper.java.initmemory=512 -Dwrapper.java.maxmemory=2048"`
 
-The list of all wrapper configuration properties can be found [here](https://wrapper.tanukisoftware.com/doc/english/properties.html).
+For the list of all configuration properties, see [Wrapper configuration properties](https://wrapper.tanukisoftware.com/doc/english/properties.html).
 
 # Extending base image
 
