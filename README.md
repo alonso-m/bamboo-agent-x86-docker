@@ -39,6 +39,8 @@ For example, if you want to change the initial amount of memory to 512MB and max
 
 `-e VM_OPTS=VM_OPTS="-Dwrapper.java.initmemory=512 -Dwrapper.java.maxmemory=2048"`
 
+The list of all wrapper configuration properties can be found [here](https://wrapper.tanukisoftware.com/doc/english/properties.html).
+
 # Extending base image
 
 This Docker image contains only minimal setup to run a Bamboo agent which might not be sufficient to run your builds. If you need additional capabilities you can extend the image to suit your needs.
