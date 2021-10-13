@@ -1,4 +1,4 @@
-FROM adoptopenjdk:8-jdk-hotspot-focal
+FROM adoptopenjdk:16-jdk-hotspot-focal
 LABEL maintainer="Atlassian Bamboo Team" \
       description="Official Bamboo Agent Docker Image"
 
